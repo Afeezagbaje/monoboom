@@ -1,0 +1,19 @@
+.navbar-element {
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.container {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 40px;
+
+}
+
+.active {
+    border: 2px solid #fff;
+}

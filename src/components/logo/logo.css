@@ -1,0 +1,17 @@
+.title {
+    font-family: Roboto, sans-serif;
+    font-size: 36px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 2px 33px 5px;
+    align-self: end;
+}
+
+.logo {
+    display: flex;
+}
