@@ -1,7 +1,7 @@
 import React from "react";
 import "./input.css";
 
-const Input = ({ type, name, handleChange, height, placeholder, value, ...otherProps }) => {
+const Input = ({ type, name, label, handleChange, height, placeholder, value, ...otherProps }) => {
 
     const style = {
         height: height ? height : "50px",
@@ -9,8 +9,9 @@ const Input = ({ type, name, handleChange, height, placeholder, value, ...otherP
 
   return (
     <div>
-      <h3>{placeholder ? placeholder : "Email"}</h3>
-      <input name={name} style={style} type={type} value={value} onChange={handleChange} className="input" {...otherProps}/>
+      <h3>{placeholder ? placeholder : ""}</h3>
+      <input id={type} name={name} style={style} type={type} value={value} onChange={handleChange} className="input" {...otherProps}/>
+      <label htmlFor="checkout" >{label}</label>
     </div>
   );
 };

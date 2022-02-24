@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./signUp.css";
 
-import NavBar from "../../components/navbar/navbar";
 import Input from "../../components/input/input";
 import Button from "../../components/button/button";
 
@@ -24,13 +23,11 @@ const SignUp = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setState({...state, [name]: value})
+    setState({ ...state, [name]: value });
   };
 
   return (
     <>
-      <NavBar />
-
       <div className="signup">
         <form onSubmit={handleSubmit}>
           <h2 className="welcome">Welcome Aboard!</h2>
