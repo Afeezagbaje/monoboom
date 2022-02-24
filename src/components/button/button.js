@@ -1,7 +1,7 @@
 import React from 'react';
 import './button.css';
 
-const Button = ({ backgroundColor, color, text, padding, fontSize, margin, handleClick }) => {
+const Button = ({ backgroundColor, color, text, padding, fontSize, margin, handleClick, type }) => {
 
     const style = {
         backgroundColor: backgroundColor ? backgroundColor : '#fff',
@@ -12,9 +12,9 @@ const Button = ({ backgroundColor, color, text, padding, fontSize, margin, handl
     }
 
   return (
-    <div onClick={handleClick} style={style} className="button">
+    <button type="submit" onClick={handleClick} style={style} className="button">
         {text ? text : 'Button'}
-    </div>
+    </button>
   )
 }
 

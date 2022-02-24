@@ -21,3 +21,19 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# Misc
+.vscode
+.idea/
+.env
+env
+.DS_Store
+*.DS_Store
+tmp/
+
+# Python
+*.pyc
+venv/
+__pycache__/
+
