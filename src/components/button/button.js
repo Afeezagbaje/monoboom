@@ -1,7 +1,7 @@
 import React from 'react';
 import './button.css';
 
-const Button = ({ backgroundColor, color, text, padding, fontSize, margin, handleClick, type }) => {
+const Button = ({ backgroundColor, color, text, padding, fontSize, margin, width, handleClick }) => {
 
     const style = {
         backgroundColor: backgroundColor ? backgroundColor : '#fff',
@@ -9,6 +9,7 @@ const Button = ({ backgroundColor, color, text, padding, fontSize, margin, handl
         padding: padding ? padding : '10px',
         fontSize: fontSize ? fontSize : '20px',
         margin: margin ? margin : '0',
+        width: width ? width : '100%',
     }
 
   return (

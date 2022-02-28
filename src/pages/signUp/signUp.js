@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./signUp.css";
 
 import Input from "../../components/input/input";
@@ -11,9 +12,15 @@ const SignUp = () => {
     password: "",
   });
 
+//   const [test, setTest] = useState(false);
+
+  useEffect(() => {console.log(state) }, [state]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    axios.post('http://localhost:8000/api/v1/register/', state).then(response => console.log(response));
     console.log(state);
+
     setState({
       email: "",
       name: "",
@@ -21,13 +28,22 @@ const SignUp = () => {
     });
   };
 
+//   const style = () => {
+//       color: "white"
+//   }
+
+//   const handleTest = (e) => {
+//      setTest(test + 1);
+//   }
+
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(state)
     setState({ ...state, [name]: value });
   };
 
   return (
-    <>
+    <div style={{height: "100vh"}}>
       <div className="signup">
         <form onSubmit={handleSubmit}>
           <h2 className="welcome">Welcome Aboard!</h2>
@@ -55,8 +71,10 @@ const SignUp = () => {
           />
           <Button text="SIGN UP" margin="50px 0" padding="20px 10px" />
         </form>
+        {/* <div style={style}>{test}</div>
+        <button onClick={handleTest}>Test</button> */}
       </div>
-    </>
+    </div>
   );
 };
 

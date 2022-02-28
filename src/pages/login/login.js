@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./login.css";
 
 import Input from "../../components/input/input";
@@ -13,6 +14,12 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(state);
+    axios.post('http://localhost:8000/api/v1/login/', state)
+    .then(response => {
+      console.log(response.data)
+      localStorage.setItem('token', response.data.token)
+    })
+    .catch(error => console.log(error.message));
     setState({
       email: "",
       password: "",
@@ -25,7 +32,7 @@ const Login = () => {
   };
 
   return (
-    <>
+    <div style={{height: "100vh"}}>
       <div className="login">
         <form onSubmit={handleSubmit}>
           <h2 className="hello">Hello there!</h2>
@@ -48,7 +55,7 @@ const Login = () => {
           <Button text="SIGN IN" margin="50px 0" padding="20px 10px" />
         </form>
       </div>
-    </>
+    </div>
   );
 };
 
